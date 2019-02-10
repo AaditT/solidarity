@@ -32,7 +32,7 @@ We are proud of our end-to-end integration of the refugee and employer interface
 
 ## What we learned
 
-To begin with, we learned a lot regarding the intricacy and nuances associated with frontend development. In addition, we learned a lot about the ChartJS and Jinja2 technologies with which we created templates and graphed data. We also learned about integrating Flask servers with frontend sites
+To begin with, we learned a lot regarding the intricacy and nuances associated with frontend development. In addition, we learned a lot about the ChartJS and Jinja2 technologies with which we created templates and graphed data. We also learned about integrating Flask servers with frontend sites.
 
 ## What's next for Solidarity.
 
