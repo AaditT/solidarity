@@ -1,12 +1,7 @@
 from flask import *
-from flask_basicauth import BasicAuth
 
 app = Flask(__name__)
-app.config['BASIC_AUTH_USERNAME'] = 'username'
-app.config['BASIC_AUTH_PASSWORD'] = 'pwd'
-app.config['BASIC_AUTH_FORCE'] = True
 
-basic_auth = BasicAuth(app)
 
 user_identity = None
 
