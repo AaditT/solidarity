@@ -1,113 +1,115 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Solidarity.</title>
-	</head>
-	<style>
-		html {
-			font-family: sans-serif;
-			background-image: url("/static/background.png");
-		}
-		h1 {
-			text-align: center;
-			font-size: 100px;
-			background-image: url("/static/banner.jpg");
-			box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
-			width: 100%;
-			height: 300px;
-			opacity: .5;
-		}
-
-    div {
+   <head>
+      <meta charset="UTF-8">
+      <title>Solidarity.</title>
+   </head>
+   <style>
+      html {
+      font-family: sans-serif;
+      background-image: url("/static/background.png");
+      }
+      h1 {
+      text-align: center;
+      font-size: 100px;
+      background-image: url("/static/banner.jpg");
+      box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+      width: 100%;
+      height: 300px;
+      opacity: .5;
+      }
+      div {
       font: 30px sans-serif;
       background-color: #A9A9A9;
       opacity: 0.5;
-			padding-top: 20px;
-    };
-		.dropbtn {
-		  background-color: #4CAF50;
-		  color: white;
-		  padding: 25px;
-		  font-size: 50px;
-		  border: none;
-		}
-		.dropdown {
-		  position: relative;
-		  display: inline-block;
-		}
-		.dropdown-content {
-			font-size:50px;
-		  display: none;
-		  position: absolute;
-		  background-color: #f1f1f1;
-		  min-width: 400px;
-		  box-shadow: 0px 25px 50px 0px rgba(0,0,0,0.2);
-		  z-index: 1;
-		}
-		.dropdown-content a {
-			font-size: 50px;
-		  color: black;
-		  padding: 20px 50px;
-		  text-decoration: none;
-		  display: block;
-		}
-		.myButton {
-			background-color:white;
-			border-radius:42px;
-			display:inline-block;
-			cursor:pointer;
-			color:#00000;
-			font-family:sans-serif;
-			font-size:18px;
-			padding:18px 27px;
-			text-decoration:none;
-		}
-		.myButton:hover {
-			background-color:indigo;
-			color: white;
-		}
-		.myButton:active {
-			position:relative;
-			top:1px;
-		}
-		h2 {
+      padding-top: 20px;
+      };
+      .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 25px;
+      font-size: 50px;
+      border: none;
+      }
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+      .dropdown-content {
+      font-size:50px;
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 400px;
+      box-shadow: 0px 25px 50px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      }
+      .dropdown-content a {
+      font-size: 50px;
+      color: black;
+      padding: 20px 50px;
+      text-decoration: none;
+      display: block;
+      }
+      .myButton {
+      background-color:white;
+      border-radius:42px;
+      display:inline-block;
+      cursor:pointer;
+      color:#00000;
+      font-family:sans-serif;
+      font-size:18px;
+      padding:18px 27px;
+      text-decoration:none;
+      }
+      .myButton:hover {
+      background-color:indigo;
+      color: white;
+      }
+      .myButton:active {
+      position:relative;
+      top:1px;
+      }
+      h2 {
       font: 50px sans-serif;
       text-align: center;
-			color: #D3D3D3;
-    };
-    h3 {
+      color: #D3D3D3;
+      };
+      h3 {
       font: 50px sans-serif;
       text-align: center;
-			color: #D3D3D3;
-    }
-    h4 {
+      color: #D3D3D3;
+      }
+      h4 {
       font: 50px sans-serif;
       text-align: center;
-			color: #D3D3D3;
-    }
-		.dropdown-content a:hover {background-color: #ddd;}
-		.dropdown:hover .dropdown-content {display: block;}
-		.dropdown:hover .dropbtn {background-color: #3e8e41;}
-	</style>
-
-	<body>
-		<h1>SOLIDARITY</h1>
-    <h2>Welcome, {{user.username}}! </h1>
-    <h4>You're currently employed at {{(user.employer.name if user.employer.name else "no firm")}}.</h4>
-    <div>
-      <strong>Got a job?</strong> Report it here to support your employer in hiring more refugees!<br>
-			<form action="/hired" method="POST">
-				<p>My name: <input id="refugee" name="refugee"></p>
-        <p>I got hired at: <input id="employer" name="employer"></p>
-       <input class="myButton" name="submit" type="submit" value="Submit!">
-      </form>
-			<p> OR </p>
-			<form action="/fired" method="POST">
-				<p>My name: <input id="refugee" name="refugee"></p>
-        <p>I got fired from: <input id="employer" name="employer"></p>
-       <input class="myButton" name="submit" type="submit" value="Submit!">
-      </form>
-    </div>
-	</body>
+      color: #D3D3D3;
+      }
+      .dropdown-content a:hover {background-color: #ddd;}
+      .dropdown:hover .dropdown-content {display: block;}
+      .dropdown:hover .dropbtn {background-color: #3e8e41;}
+   </style>
+   <body>
+      <h1>SOLIDARITY</h1>
+      <h2>Welcome, {{user.username}}!</h2>
+      <h4>You're currently employed at {{(user.employer.name if user.employer.name else "no firm")}}.</h4>
+			{% if not user.employer.name %}
+				<div>
+	         <strong>Got a job?</strong> Report it here to support your employer in hiring more refugees!<br>
+	         <form action="/hired" method="POST">
+	            <p>My name: <input id="refugee" name="refugee"></p>
+	            <p>I got hired at: <input id="employer" name="employer"></p>
+	            <input class="myButton" name="submit" type="submit" value="Submit!">
+	         </form>
+	      </div>
+			{% elif user.employer.name %}
+	      <div>
+	         <form action="/fired" method="POST">
+	            <p>My name: <input id="refugee" name="refugee"></p>
+	            <p>I got fired from: <input id="employer" name="employer"></p>
+	            <input class="myButton" name="submit" type="submit" value="Submit!">
+	         </form>
+	      </div>
+			{% endif %}
+   </body>
 </html>

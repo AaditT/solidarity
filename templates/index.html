@@ -146,17 +146,24 @@ tr:nth-child(even) {
 
 					{% for _employer in all_employers|sort(attribute='credits', reverse=True) %}
 						<tr>
-						<a href="http://0.0.0.0:5000/graph/{{_employer.name}}">
-							<th>{{_employer.name}}</th>
-			    		<th>{{_employer.credits}}</th>
+							<th>
+								<a href="http://0.0.0.0:5000/graph/{{_employer.name}}">
+									{{_employer.name}}
+								</a>
+							</th>
+			    		<th>
+								<a href="http://0.0.0.0:5000/graph/{{_employer.name}}">
+									{{_employer.credits}}
+								</a>
+							</th>
 						</a>
 					</tr>
-						{% endfor %}
+					{% endfor %}
 			  </tr>
 			</table>
-		</br>
-	</br>
-</br>
+			</br>
+			</br>
+			</br>
 			<div class="dropdown" style="padding-top: 50px">
 			  <button class="dropbtn">View Company Inclusion Performance...</button>
 			  <div class="dropdown-content">
