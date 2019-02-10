@@ -1,4 +1,4 @@
-# solidarity - 1st Place [winner](https://devpost.com/software/solidarity-ygjsf4 "winner") at [LancerHacks 2019](http://lancerhacks.com)
+# solidarity - Best Community Impact Award [winner](https://devpost.com/software/solidarity-ygjsf4 "winner") at [LancerHacks 2019](http://lancerhacks.com)
 by Aadit Trivedi & Srihari Nanniyur
 
 https://devpost.com/software/solidarity-ygjsf4
