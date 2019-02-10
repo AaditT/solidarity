@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{employer.name}} | Solidarity</title>
+    <style>
+    html {
+      background-image: url("/static/background.png");
+    };
+      .wrap {
+        width: 1000px;
+        height: 1000px;
+        padding: 0;
+        overflow: hidden;
+      }
+      .frame {
+        width: 2000px;
+        height: 1800px;
+        border: 0;
+        -ms-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        background-color: white;
+        opacity: 1;
+      }
+      iframe {
+        float: right;
+      };
+      body {
+        font-family: sans-serif;
+      }
+      h1 {
+        color:#D8D8D8;
+        font: 100px sans-serif;
+        background-color: teal;
+        opacity: .5;
+      }
+      h2 {
+        color:teal;
+        font-size: 30;
+      }
+      h3 {
+        color:lightblue;
+        font-size: 20;
+      };
+
+    </style>
+  </head>
+  <body>
+    <h1>Hello, {{employer.name}}!</h1>
+    <div>
+      <form action="/flagged" method="POST">
+        <p style="color: #D8D8D8; font-size: 30px; font-family: sans-serif;">Firm name:</p> <p><input id="employer" name="employer"></p>
+        <p style="color: #D8D8D8; font-size: 30px; font-family: sans-serif;">Flag an employee:</p> <p><input id="refugee" name="refugee"></p>
+       <input class="btn btn-default" name="submit" type="submit" value="Submit!">
+      </form>
+    </div>
+    <iframe style="border: 10px solid black;" class="frame" width="1000" height="1000" src="http://0.0.0.0:5000/graph/{{employer.name}}"></iframe>
+  </body>
+</html>

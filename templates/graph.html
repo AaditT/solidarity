@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Graph</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <style>
+    h1 {
+      font: 50px arial, sans-serif;
+    };
+    </style>
+</head>
+<body>
+  <center>
+    <h1>{{employer}}</h1>
+
+
+    <canvas id="chart" width="1600" height="1400"></canvas>
+    <script>
+      // bar chart data
+      var barData = {
+        labels : [
+          {% for val in x_vals %}
+            "{{ val }}",
+          {% endfor %}
+        ],
+        datasets : [{
+          fillColor: "rgba(140,224,255,0.2)",
+          strokeColor: "rgba(140,224,255,1)",
+          pointColor: "rgba(140,224,255,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          bezierCurve : true,
+          data : [
+	    {% for credit in employer_credits %}
+              {{ credit }},
+            {% endfor %}]
+          }
+        ]
+      }
+      var mychart = document.getElementById("chart").getContext("2d");
+      steps = 5
+      max = 100
+      // draw bar chart
+      var LineChartDemo = new Chart(mychart).Line(barData, {
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+      });
+    </script>
+  </center>
+</body>
+</html>

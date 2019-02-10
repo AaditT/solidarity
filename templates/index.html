@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Solidarity.</title>
+	</head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<style>
+		html {
+			font-family: sans-serif;
+			background-image: url("/static/background.png");
+		}
+		h1 {
+			text-align: center;
+			font-size: 100px;
+			background-image: url("/static/banner.jpg");
+			box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+			width: 100%;
+			height: 300px;
+			opacity: .5;
+		}
+		.dropbtn {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 25px;
+		  font-size: 50px;
+		  border: none;
+		}
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+			font-size:50px;
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 400px;
+		  box-shadow: 0px 25px 50px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+			font-size: 50px;
+		  color: black;
+		  padding: 20px 50px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+		*,
+		*::before,
+		*::after {
+		  box-sizing: border-box;
+		}
+		body {
+		  min-height: 450px;
+		  height: 100vh;
+		  margin: 0;
+		  font-family: sans-serif;
+		}
+		ul {
+	  	list-style-type: none;
+	  	margin: 0;
+	  	padding: 0;
+			text-align: center;
+		}
+
+		li {
+		  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+		  border-bottom: 1px solid #ccc;
+		}
+
+		li:last-child {
+		  border: none;
+		}
+
+		li a {
+		  text-decoration: none;
+		  color: #000;
+
+		  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+		  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+		  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+		  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+		  transition: font-size 0.3s ease, background-color 0.3s ease;
+		  display: block;
+		  width: 200px;
+		}
+
+		li a:hover {
+		  font-size: 30px;
+		  background: #f6f6f6;
+		}
+		table {
+			font-size: 30px;
+			align:center;
+			float: right;
+  	font-family: arial, sans-serif;
+  	border-collapse: collapse;
+  	width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+tr {
+	background-color: #808080;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+	.login {
+		font: 30px sans-serif;
+		color: white;
+	};
+	</style>
+	<body>
+		<div class="shadow">
+			<h1><strong>SOLIDARITY</strong></h1>
+		</div>
+		<div class="w3-container">
+	 </div>
+		 <div class="login">
+				<form action="/login" method="POST">
+					<p>My username:</p> <p><input id="username" name="username"></p>
+	        <p>My password:</p> <p><input type="password" name="password"></p>
+	       <input class="btn btn-default" name="submit" type="submit" value="Submit!">
+	      </form>
+			</div>
+		</br>
+	</br>
+</br>
+</br>
+			<table>
+			  <tr>
+			    <th><strong>Company</strong></th>
+			    <th><strong>Inclusion Score</strong></th>
+
+			  </tr>
+
+					{% for _employer in all_employers|sort(attribute='credits', reverse=True) %}
+						<tr>
+						<a href="http://0.0.0.0:5000/graph/{{_employer.name}}">
+							<th>{{_employer.name}}</th>
+			    		<th>{{_employer.credits}}</th>
+						</a>
+					</tr>
+						{% endfor %}
+			  </tr>
+			</table>
+		</br>
+	</br>
+</br>
+			<div class="dropdown" style="padding-top: 50px">
+			  <button class="dropbtn">View Company Inclusion Performance...</button>
+			  <div class="dropdown-content">
+					{% for _employer in all_employers %}
+						<a href="http://0.0.0.0:5000/graph/{{_employer.name}}">{{_employer.name}}</a>
+					{% endfor %}
+			  </div>
+			</div>
+	</body>
+</html>
