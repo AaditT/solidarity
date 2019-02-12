@@ -1,9 +1,10 @@
 # solidarity - Best Community Impact Award [winner](https://devpost.com/software/solidarity-ygjsf4 "winner") at [LancerHacks 2019](http://lancerhacks.com)
+A web server that encourages the inclusion of displaced refugees in the workplace.
 by Aadit Trivedi & Srihari Nanniyur
 
-Check out live [demo](https://solidarity-api-heroku.herokuapp.com/)!
 
-A web server that encourages the inclusion of displaced refugees in the workplace.
+# Check out live [demo](https://solidarity-api-heroku.herokuapp.com/)!
+
 
 ## Inspiration
 
