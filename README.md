@@ -3,7 +3,7 @@ A web server that encourages the inclusion of displaced refugees in the workplac
 by Aadit Trivedi & Srihari Nanniyur
 
 
-# Check out live [demo](https://solidarity-api-heroku.herokuapp.com/)!
+## Check out live [demo](https://solidarity-api-heroku.herokuapp.com/)!
 
 
 ## Inspiration
