@@ -2,10 +2,6 @@
 A web server that encourages the inclusion of displaced refugees in the workplace.
 by Aadit Trivedi & Srihari Nanniyur
 
-
-## Check out live [demo](https://solidarity-api-heroku.herokuapp.com/)!
-
-
 ## Inspiration
 
 The refugee crisis looms over wartorn nations such as Syria, Yemen, and Afghanistan. Despite the difficulties that refugees face in immigrating to America, refugees often face challenging financial burdens in terms of employment. Racist and xenophobic hiring practices hamper refugees' capability of integrating into society. In fact, refugees' high rates of productivity have been empirically proven, making it a win-win situation for all. Inspired by a variety of talks from large corporations, we decided to build a project that would promote inclusion and integration for refugees.
